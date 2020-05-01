@@ -75,6 +75,14 @@ Sample output:
  END:VCARD
 ```
 
+### Extract Missing
+
+You can use the small script to output in `.vcf` of records missing in file 2 based on output of diff:
+
+```bash
+.venv/bin/python3 -m vcard.extract_diff < vcard.diff > vcard_to_add.vcf
+```
+
 # MIT License
 
 Copyright (c) 2020 Leon Poon

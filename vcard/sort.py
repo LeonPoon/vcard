@@ -6,7 +6,8 @@ DEFAULT_NAMES = ('FN', 'N', 'EMAIL', 'TEL')
 
 
 def vcards_sorted(f, names):
-    return sorted((vcard.to_json(names=names or DEFAULT_NAMES), vcard) for vcard in gen_cards(f))
+    d = dict((vcard.to_json(names=names or DEFAULT_NAMES), vcard) for vcard in gen_cards(f))
+    return tuple((k, d[k]) for k in sorted(d))
 
 
 def main(names):
